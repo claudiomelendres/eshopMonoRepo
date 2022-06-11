@@ -24,6 +24,7 @@ import {DropdownModule} from 'primeng/dropdown';
 import {EditorModule} from 'primeng/editor';
 import { TagModule } from 'primeng/tag';
 import {InputMaskModule} from 'primeng/inputmask';
+import {FieldsetModule} from 'primeng/fieldset';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesService } from '@bluebits/products';
@@ -53,7 +54,8 @@ const UX_MODULE = [
     DropdownModule,
     EditorModule,
     TagModule,
-    InputMaskModule
+    InputMaskModule,
+    FieldsetModule
 ]
 
 const routes: Routes = [
@@ -100,7 +102,16 @@ const routes: Routes = [
             {
                 path: 'users/form/:id',
                 component: UsersFormComponent
-            }
+            },
+            {
+                path: 'orders',
+                component: OrdersListComponent
+            },
+            {
+                path: 'orders/:id',
+                component: OrdersDetailsComponent
+            },
+            
         ]
 
     }
