@@ -14,12 +14,13 @@ import { NavComponent } from './shared/nav/nav.component';
 import { ProductsModule } from '@bluebits/products';
 import { UiModule } from '@bluebits/ui';
 import { HttpClientModule } from '@angular/common/http';
+import { OrdersModule } from '@bluebits/orders';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
     declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, BrowserAnimationsModule, UiModule],
+    imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, BrowserAnimationsModule, UiModule, OrdersModule],
     providers: [],
     bootstrap: [AppComponent]
 })
