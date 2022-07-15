@@ -19,6 +19,6 @@ export class ProductItemComponent implements OnInit {
             productId: this.product.id,
             quantity: 1
         };
-        this.cartService.setCarItem(cartItem);
+        this.cartService.setCartItem(cartItem);
     }
 }

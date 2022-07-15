@@ -15,13 +15,26 @@ import { ProductsModule } from '@bluebits/products';
 import { UiModule } from '@bluebits/ui';
 import { HttpClientModule } from '@angular/common/http';
 import { OrdersModule } from '@bluebits/orders';
+import { MessagesComponent } from './shared/messages/messages.component';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 const routes: Routes = [{ path: '', component: HomePageComponent }];
 
 @NgModule({
-    declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent],
-    imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule, ProductsModule, AccordionModule, BrowserAnimationsModule, UiModule, OrdersModule],
-    providers: [],
+    declarations: [AppComponent, NxWelcomeComponent, HomePageComponent, HeaderComponent, FooterComponent, NavComponent, MessagesComponent],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        ProductsModule,
+        AccordionModule,
+        BrowserAnimationsModule,
+        UiModule,
+        OrdersModule,
+        ToastModule
+    ],
+    providers: [MessageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}
