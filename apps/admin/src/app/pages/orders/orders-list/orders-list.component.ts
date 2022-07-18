@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Order, OrdersService } from '@bluebits/orders';
+import { Order, OrdersService, ORDER_STATUS } from '@bluebits/orders';
 import { ConfirmationService, MessageService } from 'primeng/api';
-import { ORDER_STATUS } from '../order.constants';
 
 @Component({
     selector: 'admin-order-list',
@@ -24,6 +23,8 @@ export class OrdersListComponent implements OnInit {
     }
 
     _getOrders() {
+        console.log(this.orderStatus.Failed.label);
+
         this.ordersService.getOrders().subscribe((orders) => {
             console.log(orders);
             this.orders = orders;
